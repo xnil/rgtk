@@ -38,7 +38,7 @@ pub trait Signal<'a> {
     fn get_user_data(&'a self) -> &'a Option<Box<Any>>;
 }
 
-// The definition of the signal macro is split in an parameterless and
+// The definition of the signal macro is split into a parameterless and
 // a parameterized case because of a limitation in the rust macro
 // system.
 macro_rules! signal(

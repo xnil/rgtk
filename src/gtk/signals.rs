@@ -38,8 +38,8 @@ pub trait Signal<'a> {
     fn get_user_data(&'a self) -> &'a Option<Box<Any>>;
 }
 
-// The defintion of the signal macro is split in a argumentless and
-// one-with-arguments case because of a limitation in the rust macro
+// The definition of the signal macro is split in an parameterless and
+// a parameterized case because of a limitation in the rust macro
 // system.
 macro_rules! signal(
     //Signals without arguments
@@ -181,7 +181,7 @@ macro_rules! signal(
                 }
             }
 
-            //TODO: Rust lexer bug here, can't parse the middel `,` in `|$($arg_type),* , Box<Any>|`
+            //TODO: Rust lexer bug here, can't parse the middle `,` in `|$($arg_type),* , Box<Any>|`
             /*pub fn new_with_data (user_data: Box<Any>, cb: |$($arg_type),*, Box<Any>|:'a -> $ret_type) -> Box<Signal> {
                 box $class{
                     cb: cb,
